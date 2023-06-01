@@ -230,7 +230,7 @@ File | Settings | Tools | Shared Indexes
 
 Editor-Code Style-Java–Other-Javadoc
 
-![image-20230505233238195](images/image-20230505233238195.png)
+![image-20230505233238195](./images/image-20230505233238195.png)
 
 18.   idea 注释格式化之后回到同一行
 
@@ -240,7 +240,7 @@ Editor-Code Style-Java–Other-Javadoc
 
 包括：格式化后注释与注入类一行，以及参数居中之类的！
 
-![image-20230505235727822](images/image-20230505235727822.png)
+![image-20230505235727822](./images/image-20230505235727822.png)
 
 
 
