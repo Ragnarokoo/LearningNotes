@@ -5,7 +5,7 @@ icon: home
 title: 主页
 heroImage: /head_logo.png
 bgImage: /blog_background.jpg
-heroText: nakanomay的技术博客
+heroText: ragnarok的技术博客
 heroFullScreen: false
 tagline: Java后端实战技术博客，积跬步以至千里，致敬每个爱学习的你。
 projects:

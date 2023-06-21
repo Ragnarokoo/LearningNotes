@@ -301,6 +301,7 @@ export const zhSidebar = sidebar({
                         '6.本地镜像发布到私有库.md',
                         '7.Docker容器数据卷.md',
                         '8.Docker常规安装简介.md',
+                        'Docker开发中的一些问题.md'
                     ],
                 },
                 {
@@ -452,6 +453,29 @@ export const zhSidebar = sidebar({
                     prefix: 'optimization/',
                     children: ['52条SQL性能优化策略.md'],
                 },
+                {
+                    text: 'Elasticsearch7.x分布式搜索引擎',
+                    icon: 'free',
+                    collapsible: true,
+                    prefix: 'es7.x/',
+                    children: [
+                        'MacOS中Elasticsearch的安装「借助Homebrew」.md',
+                        '1.Elasticsearch概述.md',
+                        '2.Elasticsearch入门.md',
+                        '3.Elasticsearch环境.md',
+                        '4.Elasticsearch进阶.md',
+                        '5.Elasticsearch 集成.md',
+                        '6.Elasticsearch优化.md',
+                        '7.Elasticsearch 面试题.md'
+                    ],
+                },
+                // {
+                //     text: 'Elasticsearch8.x分布式搜索引擎',
+                //     icon: 'free',
+                //     collapsible: true
+                //     prefix: 'es8.x/',
+                //     children: [],
+                // },
             ],
         },
         {
@@ -508,6 +532,7 @@ export const zhSidebar = sidebar({
             collapsible: true,
             prefix: '/notes/software/',
             children: [
+                'MAC软件已损坏，请移至废纸娄解决方案.md',
                 'Eclipse的常用设置与快捷键.md',
                 'Idea快捷键大全（Windows）.md',
                 'MAC中的IDEA快捷键.md',

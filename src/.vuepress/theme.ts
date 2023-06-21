@@ -7,12 +7,12 @@ import { zhSidebar } from './sidebar/index.js'
 // 主题设置
 export default hopeTheme({
     // 当前网站部署到的域名
-    hostname: 'https://gitee.com/nakano_may',
+    // hostname: 'https://gitee.com/nakano_may',
 
     // 文章显示的默认作者
     author: {
-        name: 'Nakano_May',
-        url: 'https://gitee.com/nakano_may',
+        name: 'Ragnarok',
+        url: 'https://github.com/Ragnarokoo/',
     },
 
     // 使用官方提供的图标库-也可以构建自己的图标库
@@ -22,7 +22,7 @@ export default hopeTheme({
     logo: '/site_logo.svg',
 
     // 导航栏上的个人仓库地址
-    repo: 'https://gitee.com/nakano_may',
+    repo: 'https://github.com/Ragnarokoo/LearningNotes',
 
     // 自定义仓库链接文字-默认从repo中自动推断为"GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
     repoLabel: 'Gitee',
@@ -70,7 +70,7 @@ export default hopeTheme({
     contributors: false,
 
     // 文章所在仓库
-    docsRepo: 'https://gitee.com/nakano_may/mynotes.git',
+    docsRepo: 'https://github.com/Ragnarokoo/LearningNotes',
 
     // 文章所在分支
     docsBranch: 'master',
@@ -88,7 +88,7 @@ export default hopeTheme({
             sidebar: zhSidebar,
 
             // 全局设置页脚信息
-            footer: 'Mayの学习笔记',
+            footer: '📚全栈开发学习指南',
 
             // 显示页脚
             displayFooter: false,
@@ -104,7 +104,7 @@ export default hopeTheme({
         // 头像
         avatar: '/head_logo.png',
         // 名称
-        name: 'Nakano_May',
+        name: 'Ragnarok',
         // 是否是圆形头像
         roundAvatar: false,
         // 个人描述
@@ -182,7 +182,7 @@ export default hopeTheme({
                                     type: 'tip',
                                 },
                                 content: 'Recommanded',
-                            }
+                            };
                     },
                 },
             ],
@@ -202,4 +202,4 @@ export default hopeTheme({
         // 关闭sitemap插件
         sitemap: false,
     },
-})
+});
