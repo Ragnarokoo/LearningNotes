@@ -1,10 +1,3 @@
-/*
- * @Author: kirito
- * @Date: 2022-12-01 16:45:51
- * @LastEditors: kirito
- * @LastEditTime: 2023-06-21 22:33:15
- * @Description: 
- */
 import { defineUserConfig } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components";

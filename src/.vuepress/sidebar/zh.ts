@@ -1,4 +1,4 @@
-import { sidebar } from 'vuepress-theme-hope'
+import { sidebar } from 'vuepress-theme-hope';
 
 export const zhSidebar = sidebar({
     // Java开发笔记
@@ -34,7 +34,7 @@ export const zhSidebar = sidebar({
         },
         {
             text: 'Java网络编程NIO',
-            icon: 'wrap',
+            icon: 'IO',
             collapsible: true,
             prefix: '/notes/javacore/nio/',
             children: [
@@ -301,7 +301,7 @@ export const zhSidebar = sidebar({
                         '6.本地镜像发布到私有库.md',
                         '7.Docker容器数据卷.md',
                         '8.Docker常规安装简介.md',
-                        'Docker开发中的一些问题.md'
+                        'Docker开发中的一些问题.md',
                     ],
                 },
                 {
@@ -455,7 +455,7 @@ export const zhSidebar = sidebar({
                 },
                 {
                     text: 'Elasticsearch7.x分布式搜索引擎',
-                    icon: 'free',
+                    icon: 'search',
                     collapsible: true,
                     prefix: 'es7.x/',
                     children: [
@@ -466,16 +466,22 @@ export const zhSidebar = sidebar({
                         '4.Elasticsearch进阶.md',
                         '5.Elasticsearch 集成.md',
                         '6.Elasticsearch优化.md',
-                        '7.Elasticsearch 面试题.md'
+                        '7.Elasticsearch 面试题.md',
                     ],
                 },
-                // {
-                //     text: 'Elasticsearch8.x分布式搜索引擎',
-                //     icon: 'free',
-                //     collapsible: true
-                //     prefix: 'es8.x/',
-                //     children: [],
-                // },
+                {
+                    text: 'Elasticsearch8.x分布式搜索引擎',
+                    icon: 'search',
+                    collapsible: true,
+                    prefix: 'es8.x/',
+                    children: [
+                        '1、Elasticsearch8.x概述.md',
+                        '2、Elasticsearch安装&使用.md',
+                        '3、Elasticsearch基础功能.md',
+                        '4、Elasticsearch进阶功能.md',
+                        '5、Elasticsearch优化.md',
+                    ],
+                },
             ],
         },
         {
@@ -1004,4 +1010,4 @@ export const zhSidebar = sidebar({
             children: [],
         },
     ],
-})
+});
