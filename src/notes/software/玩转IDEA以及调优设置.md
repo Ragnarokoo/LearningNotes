@@ -100,7 +100,7 @@ https://plugins.jetbrains.com/plugin/8006-material-theme-ui/versions/stable
 
 - MyBatisCodeHelperPro （mybatis代码帮助插件。最好的Mybatis代码提示，完整支持Mybatis动态sql代码提示，代码检测，写sql几乎所有地方都有代码提示。）
 
-- lombok 
+- lombok
 
 - google-java-format 代码自动格式化
 
@@ -126,7 +126,7 @@ https://plugins.jetbrains.com/plugin/8006-material-theme-ui/versions/stable
 
 - yaml （yaml格式提示高亮）
 
-- Markdown 
+- Markdown
 
 - Gradle
 
@@ -221,30 +221,26 @@ File | Settings | Tools | Shared Indexes
 ![image-20230427064949249](./images/image-20230427064949249.png)
 
 16. Editor-General
-    
+
     设置鼠标滚轮滚动修改字体大小
 
 ![image-20230427065434952](./images/image-20230427065434952.png)
 
-17.   IDEA注释多行变单行
+17. IDEA注释多行变单行
 
 Editor-Code Style-Java–Other-Javadoc
 
 ![image-20230505233238195](./images/image-20230505233238195.png)
 
-18.   idea 注释格式化之后回到同一行
+18. idea 注释格式化之后回到同一行
 
 如上图一直勾选Editor-Code Style-Java–Other-Javadoc-将Preserve line feeds 选中
 
-19.   个人的一些其他设置（纯属个人爱）
+19. 个人的一些其他设置（纯属个人爱）
 
 包括：格式化后注释与注入类一行，以及参数居中之类的！
 
 ![image-20230505235727822](./images/image-20230505235727822.png)
-
-
-
-
 
 ## 04、常用代码模版
 
@@ -286,7 +282,7 @@ public static void main(String[] args)
 
 ![image-20230427070703095](./images/image-20230427070703095.png)
 
--   注释（IDEA添加代码模版）
+- 注释（IDEA添加代码模版）
 
 1.创建时同时添加注释
 
@@ -295,11 +291,11 @@ public static void main(String[] args)
 ```java
 #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
 /**
- * ${Description}
- * @author sakura 
- * @version 1.0
+ * @author ragnarok
+ * @description
  * @create ${YEAR}-${MONTH}-${DAY} ${TIME}
- * @description：
+ * @github https://github.com/Ragnarokoo
+ * @version 1.0
  */
 public class ${NAME} {
 }
@@ -328,13 +324,27 @@ public class ${NAME} {
 
 ```java
 **
-* @Description: $description$
-* @Param: $params$
-* @return: $returns$
-* @Author: sakura
-* @Date: $date$ $time$
-*/
+ * @author ragnarok
+ * @description $description$
+$param$ 
+ * @return $return$
+ * @date $date$ $time$
+ */
 ```
+
+param
+
+```sh
+groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i < params.size(); i++) {result+=' * @param ' + params[i] + ((i < params.size() - 1) ? '\\n':'')}; return result", methodParameters()) 
+```
+
+return
+
+```sh
+groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split('<').toList(); for(i = 0; i < params.size(); i++) {if(i!=0){result+='<';}; def p1=params[i].split(',').toList(); for(i2 = 0; i2 < p1.size(); i2++) { def p2=p1[i2].split('\\\\.').toList(); result+=p2[p2.size()-1]; if(i2!=p1.size()-1){result+=','} } ; }; return result", methodReturnType()) 
+```
+
+>   Skip if defind 可以跳过定义！–这里防止格式乱了!
 
 ![image-20230514015147623](./images/image-20230514015147623.png)
 

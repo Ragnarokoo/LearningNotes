@@ -1,3 +1,23 @@
+---
+# 当前页面内容标题
+title: 52条SQL性能优化策略
+# 分类
+category:
+  - mysql
+# 标签
+tag: 
+  - mysql
+  - SQL
+  - 关系型数据库
+sticky: false
+# 是否收藏在博客主题的文章列表中，当填入数字时，数字越大，排名越靠前。
+star: false
+# 是否将该文章添加至文章列表中
+article: true
+# 是否将该文章添加至时间线中
+timeline: true
+---
+
 # 52条SQL语句性能优化策略
 
 > 本文会提到 52 条 SQL 语句性能优化策略。

@@ -9,8 +9,8 @@ export const zhSidebar = sidebar({
             collapsible: true,
             prefix: '/notes/javacore/java',
             children: [
-                '01、变量&标识符&保留字&进制.md',
-                '02、JavaSE_Java语言概述.md',
+                '01、JavaSE_Java语言概述.md',
+                '02、变量&标识符&保留字&进制.md',
                 '03、运算符.md',
                 '04、程序流程控制.md',
                 '05、数组.md',
@@ -451,7 +451,7 @@ export const zhSidebar = sidebar({
                     icon: 'free',
                     collapsible: true,
                     prefix: 'optimization/',
-                    children: ['52条SQL性能优化策略.md'],
+                    children: ['52条SQL性能优化策略.md','聊聊数据库建表的15个小技巧.md'],
                 },
                 {
                     text: 'Elasticsearch7.x分布式搜索引擎',
@@ -640,6 +640,13 @@ export const zhSidebar = sidebar({
                 'Github标星7k！这款Git可视化工具，值得一试！.md',
                 'Spring和IDEA都不推荐用的@Autowired注解，为什么还有那么多人用？.md',
                 '3 款非常实用的 Node.js 版本管理工具',
+                'BeanUtils.copyProperties的11个坑',
+                'PO、VO、DAO、BO、DTO、POJO 能分清吗？.md',
+                'Lombok有啥牛皮的？SpringBoot和IDEA官方都要支持它！',
+                '既然有Map了，为什么还要有Redis？',
+                '十二条后端开发经验分享，纯干货',
+                '优秀后端都应该具备的开发好习惯',
+                '你还在用@Autowired和@Resource？.md'
             ],
         },
     ],

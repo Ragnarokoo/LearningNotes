@@ -18,7 +18,7 @@ timeline: true
 ---
 
 
-![image-20221209110043449](./images\spring6\image-20221209110043449.png)
+![image-20221209110043449](./images/spring6/image-20221209110043449.png)
 
 ## 1、概述
 
@@ -30,7 +30,7 @@ Spring 自诞生以来备受青睐，一直被广大开发人员作为 Java 企�
 
 自 2004 年 4 月，Spring 1.0 版本正式发布以来，Spring 已经步入到了第 6 个大版本，也就是 Spring 6。本课程采用Spring当前最新发布的正式版本**6.0.2**。
 
-![image-20221216223135162](./images\spring6\image-20221201102513199.png)
+![image-20221216223135162](./images/spring6/image-20221201102513199.png)
 
 
 
@@ -80,7 +80,7 @@ Spring 有两个最核心模块： IoC 和 AOP。
 
 官网地址：https://spring.io/
 
-![image-20221207142746771](./images\spring6\image-20221207142746771.png)
+![image-20221207142746771](./images/spring6/image-20221207142746771.png)
 
 ![image-2097896352](./images/spring6/2097896352.png)
 
@@ -133,7 +133,7 @@ spring core提供了IOC,DI,Bean配置装载创建的核心实现。核心概念�
 
 **（1）Spring6要求JDK最低版本是JDK17**
 
-![image-20221201103138194](./images\spring6\image-20221201103138194.png)
+![image-20221201103138194](./images/spring6/image-20221201103138194.png)
 
 #### 1.5.2、本课程软件版本
 
@@ -163,23 +163,23 @@ spring core提供了IOC,DI,Bean配置装载创建的核心实现。核心概念�
 
 在idea中，依次单击 File -> New -> Project -> New Project
 
-![image-20221205201741893](./images\spring6\image-20221205201741893.png)
+![image-20221205201741893](./images/spring6/image-20221205201741893.png)
 
 
 
 点击“Create”
 
-![image-20221205202000198](./images\spring6\image-20221205202000198.png)
+![image-20221205202000198](./images/spring6/image-20221205202000198.png)
 
 删除src目录
 
 **（2）构建子模块spring6-first**
 
-![image-20221205202117383](./images\spring6\image-20221205202117383.png)
+![image-20221205202117383](./images/spring6/image-20221205202117383.png)
 
 点击 Create 完成
 
-![image-20221205202154225](./images\spring6\image-20221205202154225.png)
+![image-20221205202154225](./images/spring6/image-20221205202154225.png)
 
 
 
@@ -212,7 +212,7 @@ https://spring.io/projects/spring-framework#learn
 
 **查看依赖：**
 
-![image-20221201105416558](./images\spring6\image-20221201105416558.png)
+![image-20221201105416558](./images/spring6/image-20221201105416558.png)
 
 #### 2.3.2、创建java类
 
@@ -731,9 +731,9 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name + '/'' +
                 ", age=" + age +
-                ", sex='" + sex + '\'' +
+                ", sex='" + sex + '/'' +
                 '}';
     }
 
@@ -903,7 +903,7 @@ public class Clazz {
     public String toString() {
         return "Clazz{" +
                 "clazzId=" + clazzId +
-                ", clazzName='" + clazzName + '\'' +
+                ", clazzName='" + clazzName + '/'' +
                 '}';
     }
 
@@ -1127,7 +1127,7 @@ public class Teacher {
     public String toString() {
         return "Teacher{" +
                 "teacherId=" + teacherId +
-                ", teacherName='" + teacherName + '\'' +
+                ", teacherName='" + teacherName + '/'' +
                 '}';
     }
 }
@@ -1438,8 +1438,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", username='" + username + '/'' +
+                ", password='" + password + '/'' +
                 ", age=" + age +
                 '}';
     }
@@ -1557,8 +1557,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", username='" + username + '/'' +
+                ", password='" + password + '/'' +
                 ", age=" + age +
                 '}';
     }
@@ -2801,9 +2801,9 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "name='" + name + '\'' +
+                "name='" + name + '/'' +
                 ", age=" + age +
-                ", color='" + color + '\'' +
+                ", color='" + color + '/'' +
                 '}';
     }
 }
@@ -3106,7 +3106,7 @@ public class AnnotationApplicationContext implements ApplicationContext {
      */
     public AnnotationApplicationContext(String basePackage) {
        try {
-            String packageDirName = basePackage.replaceAll("\\.", "\\\\");
+            String packageDirName = basePackage.replaceAll("//.", "////");
             Enumeration<URL> dirs =Thread.currentThread().getContextClassLoader().getResources(packageDirName);
             while (dirs.hasMoreElements()) {
                 URL url = dirs.nextElement();
@@ -3136,8 +3136,8 @@ public class AnnotationApplicationContext implements ApplicationContext {
                     //选中class文件
                     if (pathWithClass.contains(".class")) {
                         //    com.xinzhi.dao.UserDao
-                        //去掉.class后缀，并且把 \ 替换成 .
-                        String fullName = pathWithClass.replaceAll("\\\\", ".").replace(".class", "");
+                        //去掉.class后缀，并且把 / 替换成 .
+                        String fullName = pathWithClass.replaceAll("////", ".").replace(".class", "");
                         try {
                             Class<?> aClass = Class.forName(fullName);
                             //把非接口的类实例化放在map中
@@ -3263,7 +3263,7 @@ public class AnnotationApplicationContext implements ApplicationContext {
      */
     public AnnotationApplicationContext(String basePackage) {
         try {
-            String packageDirName = basePackage.replaceAll("\\.", "\\\\");
+            String packageDirName = basePackage.replaceAll("//.", "////");
             Enumeration<URL> dirs =Thread.currentThread().getContextClassLoader().getResources(packageDirName);
             while (dirs.hasMoreElements()) {
                 URL url = dirs.nextElement();
@@ -3296,8 +3296,8 @@ public class AnnotationApplicationContext implements ApplicationContext {
                     //选中class文件
                     if (pathWithClass.contains(".class")) {
                         //    com.xinzhi.dao.UserDao
-                        //去掉.class后缀，并且把 \ 替换成 .
-                        String fullName = pathWithClass.replaceAll("\\\\", ".").replace(".class", "");
+                        //去掉.class后缀，并且把 / 替换成 .
+                        String fullName = pathWithClass.replaceAll("////", ".").replace(".class", "");
                         try {
                             Class<?> aClass = Class.forName(fullName);
                             //把非接口的类实例化放在map中
@@ -3726,7 +3726,7 @@ AOP（Aspect Oriented Programming）是一种设计思想，是软件设计领�
 
 
 
-![image-20221216132844066](./images\spring6\image-20221216132844066.png)
+![image-20221216132844066](./images/spring6/image-20221216132844066.png)
 
 - 动态代理分为JDK动态代理和cglib动态代理
 - 当目标类有接口的情况使用JDK动态代理和cglib动态代理，没有接口时只能使用cglib动态代理
@@ -4327,7 +4327,7 @@ public class SpringJUnit4Test {
 
 #### 7.1.1、简介
 
-![image-20221217115515670](./images\spring6\image-20221217115515670.png)
+![image-20221217115515670](./images/spring6/image-20221217115515670.png)
 
 Spring 框架对 JDBC 进行封装，使用 JdbcTemplate 方便实现对数据库操作
 
@@ -4482,9 +4482,9 @@ public class Emp {
     public String toString() {
         return "Emp{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name + '/'' +
                 ", age=" + age +
-                ", sex='" + sex + '\'' +
+                ", sex='" + sex + '/'' +
                 '}';
     }
 }
@@ -5211,9 +5211,9 @@ public class TxByAllAnnotationTest {
 
 ### 8.1、Spring Resources概述
 
-![image-20221218154945878](./images\spring6\image-20221218154945878.png)
+![image-20221218154945878](./images/spring6/image-20221218154945878.png)
 
-![image-20221206231535991](./images\spring6\image-20221206231535991.png)
+![image-20221206231535991](./images/spring6/image-20221206231535991.png)
 
 Java的标准java.net.URL类和各种URL前缀的标准处理程序无法满足所有对low-level资源的访问，比如：没有标准化的 URL 实现可用于访问需要从类路径或相对于 ServletContext 获取的资源。并且缺少某些Spring所需要的功能，例如检测某资源是否存在等。**而Spring的Resource声明了访问low-level资源的能力。**
 
@@ -5302,7 +5302,7 @@ file: ------该前缀用于从文件系统中读取资源
 
 **创建一个maven子模块spring6-resources，配置Spring依赖（参考前面）**
 
-![image-20221207102315185](./images\spring6\image-20221207102315185.png)
+![image-20221207102315185](./images/spring6/image-20221207102315185.png)
 
 ```java
 package com.atguigu.spring6.resources;
@@ -5359,7 +5359,7 @@ ClassPathResource 用来访问类加载路径下的资源，相对于其他的 R
 
 **实验：在类路径下创建文件atguigu.txt，使用ClassPathResource 访问**
 
-![image-20221207103020854](./images\spring6\image-20221207103020854.png)
+![image-20221207103020854](./images/spring6/image-20221207103020854.png)
 
 ```java
 package com.atguigu.spring6.resources;
@@ -5413,7 +5413,7 @@ public class FileSystemResourceDemo {
         //相对路径
         FileSystemResource resource = new FileSystemResource("atguigu.txt");
         //绝对路径
-        //FileSystemResource resource = new FileSystemResource("C:\\atguigu.txt");
+        //FileSystemResource resource = new FileSystemResource("C://atguigu.txt");
         // 获取文件名
         System.out.println("resource.getFileName = " + resource.getFilename());
         // 获取文件描述
@@ -5458,7 +5458,7 @@ InputStreamResource 是给定的输入流(InputStream)的Resource实现。它的
 
 上述Resource实现类与Resource顶级接口之间的关系可以用下面的UML关系模型来表示
 
-![image-20221206232920494](./images\spring6\image-20221206232920494.png)
+![image-20221206232920494](./images/spring6/image-20221206232920494.png)
 
 
 
@@ -5790,7 +5790,7 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath*:bean*.xm
 
 ## 9、国际化：i18n
 
-![image-20221218154728062](./images\spring6\image-20221218154728062.png)
+![image-20221218154728062](./images/spring6/image-20221218154728062.png)
 
 ### 9.1、i18n概述
 
@@ -5821,11 +5821,11 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath*:bean*.xm
 
 **第一步 创建子模块spring6-i18n，引入spring依赖**
 
-![image-20221207122500801](./images\spring6\image-20221207122500801.png)
+![image-20221207122500801](./images/spring6/image-20221207122500801.png)
 
 **第二步 在resource目录下创建两个配置文件：messages_zh_CN.propertes和messages_en_GB.propertes**
 
-![image-20221207124839565](./images\spring6\image-20221207124839565.png)
+![image-20221207124839565](./images/spring6/image-20221207124839565.png)
 
 **第三步 测试**
 
@@ -5880,7 +5880,7 @@ spring中国际化是通过MessageSource这个接口来支持的
 
 **{0},{1}这样内容，就是动态参数**
 
-![image-20221207140024056](./images\spring6\image-20221207140024056.png)
+![image-20221207140024056](./images/spring6/image-20221207140024056.png)
 
 **（1）创建atguigu_en_US.properties**
 
@@ -5952,11 +5952,11 @@ public class Demo2 {
 
 ## 10、数据校验：Validation
 
-![image-20221218154808754](./images\spring6\image-20221218154808754.png)
+![image-20221218154808754](./images/spring6/image-20221218154808754.png)
 
 ### 10.1、Spring Validation概述
 
-![image-20221206220207266](./images\spring6\image-20221206220207266.png)
+![image-20221206220207266](./images/spring6/image-20221206220207266.png)
 
 在开发中，我们经常遇到参数校验的需求，比如用户注册的时候，要校验用户名不能为空、用户名长度不超过20个字符、手机号是合法的手机号格式等等。如果使用普通方式，我们会把校验的代码和真正的业务处理逻辑耦合在一起，而且如果未来要新增一种校验逻辑也需要在修改多个地方。而spring validation允许通过注解的方式来定义对象校验规则，把校验和业务逻辑分离开，让代码编写更加方便。Spring Validation其实就是对Hibernate Validator进一步的封装，方便在Spring中使用。
 
@@ -5976,7 +5976,7 @@ public class Demo2 {
 
 **第一步 创建子模块 spring6-validator**
 
-![image-20221206221002615](./images\spring6\image-20221206221002615.png)
+![image-20221206221002615](./images/spring6/image-20221206221002615.png)
 
 
 
@@ -6294,7 +6294,7 @@ public class User {
     @Max(120)
     private int age;
 
-    @Pattern(regexp = "^1(3|4|5|7|8)\\d{9}$",message = "手机号码格式错误")
+    @Pattern(regexp = "^1(3|4|5|7|8)//d{9}$",message = "手机号码格式错误")
     @NotBlank(message = "手机号码不能为空")
     private String phone;
 
@@ -6435,7 +6435,7 @@ public class CannotBlankValidator implements ConstraintValidator<CannotBlank, St
 
 ## 11、提前编译：AOT
 
-![image-20221218154841001](./images\spring6\image-20221218154841001.png)
+![image-20221218154841001](./images/spring6/image-20221218154841001.png)
 
 ### 11.1、AOT概述
 
@@ -6457,7 +6457,7 @@ AOT 编译能直接将源代码转化为机器码，内存占用低，启动速�
 .java -> .class -> (使用jaotc编译工具) -> .so（程序函数库,即编译好的可以供其他程序使用的代码和数据）
 ```
 
-![image-20221207113544080](./images\spring6\image-20221207113544080.png)
+![image-20221207113544080](./images/spring6/image-20221207113544080.png)
 
 **（3）AOT的优点**
 
@@ -6512,33 +6512,33 @@ Native Image 是一项创新技术，可将 Java 代码编译成独立的本机�
 
 进入官网下载：https://www.graalvm.org/downloads/
 
-![image-20221207153944132](./images\spring6\image-20221207153944132.png)
+![image-20221207153944132](./images/spring6/image-20221207153944132.png)
 
-![image-20221207152841304](./images\spring6\image-20221207152841304.png)
+![image-20221207152841304](./images/spring6/image-20221207152841304.png)
 
 ##### （2）配置环境变量
 
 **添加GRAALVM_HOME**
 
-![image-20221207110539954](./images\spring6\image-20221207110539954.png)
+![image-20221207110539954](./images/spring6/image-20221207110539954.png)
 
 **把JAVA_HOME修改为graalvm的位置**
 
-![image-20221207153724340](./images\spring6\image-20221207153724340.png)
+![image-20221207153724340](./images/spring6/image-20221207153724340.png)
 
 **把Path修改位graalvm的bin位置**
 
-![image-20221207153755732](./images\spring6\image-20221207153755732.png)
+![image-20221207153755732](./images/spring6/image-20221207153755732.png)
 
 **使用命令查看是否安装成功**
 
-![image-20221207153642253](./images\spring6\image-20221207153642253.png)
+![image-20221207153642253](./images/spring6/image-20221207153642253.png)
 
 ##### （3）安装native-image插件
 
 **使用命令 gu install native-image下载安装**
 
-![image-20221207155009832](./images\spring6\image-20221207155009832.png)
+![image-20221207155009832](./images/spring6/image-20221207155009832.png)
 
 
 
@@ -6548,33 +6548,33 @@ Native Image 是一项创新技术，可将 Java 代码编译成独立的本机�
 
 https://visualstudio.microsoft.com/zh-hans/downloads/
 
-![image-20221219112426052](./images\spring6\image-20221219112426052.png)
+![image-20221219112426052](./images/spring6/image-20221219112426052.png)
 
 ##### （2）安装Visual Studio
 
-![image-20221207155726572](./images\spring6\image-20221207155726572.png)
+![image-20221207155726572](./images/spring6/image-20221207155726572.png)
 
-![image-20221207155756512](./images\spring6\image-20221207155756512.png)
+![image-20221207155756512](./images/spring6/image-20221207155756512.png)
 
 ##### （3）添加Visual Studio环境变量
 
 配置INCLUDE、LIB和Path
 
-![image-20221207110947997](./images\spring6\image-20221207110947997.png)
+![image-20221207110947997](./images/spring6/image-20221207110947997.png)
 
 
 
-![image-20221207111012582](./images\spring6\image-20221207111012582.png)
+![image-20221207111012582](./images/spring6/image-20221207111012582.png)
 
 
 
-![image-20221207111105569](./images\spring6\image-20221207111105569.png)
+![image-20221207111105569](./images/spring6/image-20221207111105569.png)
 
 
 
 ##### （4）打开工具，在工具中操作
 
-![image-20221207111206279](./images\spring6\image-20221207111206279.png)
+![image-20221207111206279](./images/spring6/image-20221207111206279.png)
 
 
 
@@ -6593,29 +6593,29 @@ public class Hello {
 
 ##### （2）复制文件到目录，执行编译
 
-![image-20221207111420056](./images\spring6\image-20221207111420056.png)
+![image-20221207111420056](./images/spring6/image-20221207111420056.png)
 
 ##### （3）Native Image 进行构建
 
-![image-20221207111509837](./images\spring6\image-20221207111509837.png)
+![image-20221207111509837](./images/spring6/image-20221207111509837.png)
 
-![image-20221207111609878](./images\spring6\image-20221207111609878.png)
+![image-20221207111609878](./images/spring6/image-20221207111609878.png)
 
 ##### （4）查看构建的文件
 
-![image-20221207111644950](./images\spring6\image-20221207111644950.png)
+![image-20221207111644950](./images/spring6/image-20221207111644950.png)
 
 ##### （5）执行构建的文件
 
-![image-20221207111731150](./images\spring6\image-20221207111731150.png)
+![image-20221207111731150](./images/spring6/image-20221207111731150.png)
 
 可以看到这个Hello最终打包产出的二进制文件大小为11M，这是包含了SVM和JDK各种库后的大小，虽然相比C/C++的二进制文件来说体积偏大，但是对比完整JVM来说，可以说是已经是非常小了。
 
 相比于使用JVM运行，Native Image的速度要快上不少，cpu占用也更低一些，从官方提供的各类实验数据也可以看出Native Image对于启动速度和内存占用带来的提升是非常显著的：
 
-![image-20221207111947283](./images\spring6\image-20221207111947283.png)
+![image-20221207111947283](./images/spring6/image-20221207111947283.png)
 
 
 
-![image-20221207112009852](./images\spring6\image-20221207112009852.png)
+![image-20221207112009852](./images/spring6/image-20221207112009852.png)
 

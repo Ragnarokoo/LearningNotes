@@ -7,7 +7,7 @@ import { zhSidebar } from './sidebar/index.js'
 // 主题设置
 export default hopeTheme({
     // 当前网站部署到的域名
-    // hostname: 'https://gitee.com/nakano_may',
+    hostname: 'https://Ragnarokoo.github.io/LearningNotes',
 
     // 文章显示的默认作者
     author: {
@@ -25,7 +25,7 @@ export default hopeTheme({
     repo: 'https://github.com/Ragnarokoo/LearningNotes',
 
     // 自定义仓库链接文字-默认从repo中自动推断为"GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: 'Gitee',
+    repoLabel: 'Github',
 
     // 是否在导航栏内显示仓库链接-默认为true
     repoDisplay: true,
@@ -95,7 +95,7 @@ export default hopeTheme({
 
             // 页面配置信息
             metaLocales: {
-                editLink: '在【Gitee】上编辑此页',
+                editLink: '在【Github】上编辑此页',
             },
         },
     },

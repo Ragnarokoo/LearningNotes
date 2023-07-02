@@ -1,6 +1,6 @@
 ---
 # 当前页面内容标题
-title: 02、JavaSE_Java语言概述
+title: 01、JavaSE_Java语言概述
 # 分类
 category:
   - Java
